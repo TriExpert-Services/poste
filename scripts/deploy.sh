@@ -67,6 +67,7 @@ fi
 
 # Construir imagen
 log "Construyendo imagen Docker..."
+echo "  - Arreglando repositorios de Debian Buster..."
 docker-compose build
 
 # Iniciar servicios
