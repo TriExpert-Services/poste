@@ -7,7 +7,7 @@ services:
     network_mode: host
     
     # Configura el hostname de tu servidor de correo
-    hostname: mail.ejemplo.com  # Cambia esto por tu dominio real
+    hostname: mail.triexpertservice.com  # Cambia esto por tu dominio real
     
     volumes:
       - ./data:/data
