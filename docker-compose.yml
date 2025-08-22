@@ -25,7 +25,7 @@ services:
       # Otras configuraciones opcionales de poste.io
       - "DISABLE_CLAMAV=TRUE"     # Desactiva antivirus si no lo necesitas
       - "DISABLE_RSPAMD=FALSE"    # Mantiene el filtro anti-spam
-      - "TZ=America/New_York"  # Ajusta tu zona horaria
+      - "TZ=America/New_York"  # Ajusta tu zona horaria local
       
       # Clave de encriptación persistente para plugins de Roundcube (opcional)
       # - "DES_KEY=tu_clave_de_48_caracteres_hexadecimales_aqui"
