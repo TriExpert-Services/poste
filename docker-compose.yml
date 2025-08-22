@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  poste:
+    build: .
+    restart: unless-stopped
+    network_mode: host
+    
+    # Configura el hostname de tu servidor de correo
+    hostname: mail.ejemplo.com  # Cambia esto por tu dominio real
+    
+    volumes:
+      - ./data:/data
+      - /etc/localtime:/etc/localtime:ro
+      
+    environment:
+      # Puertos personalizados
+      - "HTTP_PORT=8080"
+      - "HTTPS_PORT=8443"
+      
+      # Configuración de IPs - ajusta según tus necesidades
+      - "LISTEN_ON=host"  # Escucha en las IPs del hostname
+      - "SEND_ON="        # Usa las mismas IPs para envío
+      
+      # Otras configuraciones opcionales de poste.io
+      - "DISABLE_CLAMAV=TRUE"     # Desactiva antivirus si no lo necesitas
+      - "DISABLE_RSPAMD=FALSE"    # Mantiene el filtro anti-spam
+      - "TZ=America/Mexico_City"  # Ajusta tu zona horaria
+      
+      # Clave de encriptación persistente para plugins de Roundcube (opcional)
+      # - "DES_KEY=tu_clave_de_48_caracteres_hexadecimales_aqui"
